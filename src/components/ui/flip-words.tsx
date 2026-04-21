@@ -25,7 +25,7 @@ export const FlipWords = ({
   const longestWord = words.reduce((a, b) => (a.length > b.length ? a : b), "");
 
   return (
-    <span className={cn("relative inline-block text-left perspective-1000", className)}>
+    <span className="relative inline-block text-left perspective-1000">
       <AnimatePresence>
         <motion.span
           key={index}
@@ -34,13 +34,13 @@ export const FlipWords = ({
           exit={{ opacity: 0, rotateX: 90, y: 20 }}
           transition={{ duration: 0.6, type: "spring", stiffness: 100, damping: 20 }}
           style={{ transformOrigin: "center center", position: "absolute", left: 0, top: 0 }}
-          className="whitespace-nowrap drop-shadow-xl"
+          className={cn("whitespace-nowrap drop-shadow-xl", className)}
         >
           {words[index]}
         </motion.span>
       </AnimatePresence>
       {/* Bingkai statis tak terlihat supaya elemen lain 100% tidak tergeser sedikitpun walau ganti kata */}
-      <span className="invisible whitespace-nowrap pointer-events-none">{longestWord}</span>
+      <span className={cn("invisible whitespace-nowrap pointer-events-none", className)}>{longestWord}</span>
     </span>
   );
 };
