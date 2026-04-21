@@ -4,7 +4,7 @@ import logoGambar from '@/assets/logo.png';
 import { FlipWords } from '@/components/ui/flip-words';
 import { ChevronDown } from 'lucide-react';
 
-const WORDS_ARRAY = ["Cerdas ", "Sehat ", "Tangguh ", "Berdaya "];
+const WORDS_ARRAY = ["Cerdas", "Sehat", "Tangguh", "Berdaya"];
 
 export default function LandingSection() {
   return (
