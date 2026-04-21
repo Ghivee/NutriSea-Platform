@@ -55,7 +55,7 @@ export default function LandingSection() {
         className="absolute bottom-2 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-30 cursor-pointer hover:opacity-75 transition-opacity"
         onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
       >
-        <span className="text-[10px] md:text-xs text-blue-600 uppercase tracking-[0.2em] font-black">SCROLL KE BAWAH ⬇</span>
+        <span className="text-[10px] md:text-xs text-blue-600 uppercase tracking-[0.2em] font-black">SUPERFOOD & DIGITAL</span>
         <div className="w-1 h-12 md:h-14 bg-gradient-to-b from-blue-500 to-transparent rounded-full" />
       </div>
     </div>
