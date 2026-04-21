@@ -98,7 +98,7 @@ export default function FeatureShowcase() {
                 {/* Teks Penjelasan Ramah */}
                 <div className={`w-full max-w-md order-2 transition-all duration-700 ease-in-out ${isLeft ? 'md:order-2' : 'md:order-1'}`}>
                     <AnimatePresence mode="wait">
-                        <motion.div key={activeSide} variants={animations.container} initial="hidden" animate="visible" exit="exit" className={`flex flex-col ${isLeft ? 'md:items-start md:text-left' : 'md:items-end md:text-right'} items-center text-center mt-10 md:mt-0`}>
+                        <motion.div key={activeSide} variants={animations.container} initial="hidden" whileInView="visible" viewport={{ once: false }} exit="exit" className={`flex flex-col ${isLeft ? 'md:items-start md:text-left' : 'md:items-end md:text-right'} items-center text-center mt-10 md:mt-0`}>
                             <motion.h2 variants={animations.item} className="text-xs font-bold uppercase tracking-[0.2em] text-blue-500 mb-2">{currentData.label}</motion.h2>
                             <motion.h1 variants={animations.item} className="text-4xl md:text-5xl font-black tracking-tight mb-4 text-slate-800">{currentData.title}</motion.h1>
                             <motion.p variants={animations.item} className="text-slate-600 mb-8 leading-relaxed max-md:text-sm font-medium">{currentData.description}</motion.p>
@@ -111,7 +111,7 @@ export default function FeatureShowcase() {
                                             <span className="font-mono text-blue-600">{feature.value}%</span>
                                         </div>
                                         <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
-                                            <motion.div initial={{ width: 0 }} animate={{ width: `${feature.value}%` }} transition={{ duration: 1, delay: 0.2 + idx * 0.1 }} className={`h-full ${isLeft ? 'bg-blue-500 float-left' : 'bg-cyan-500 float-right'}`} />
+                                            <motion.div initial={{ width: 0 }} whileInView={{ width: `${feature.value}%` }} viewport={{ once: false }} transition={{ duration: 1, delay: 0.2 + idx * 0.1 }} className={`h-full ${isLeft ? 'bg-blue-500 float-left' : 'bg-cyan-500 float-right'}`} />
                                         </div>
                                     </div>
                                 ))}
