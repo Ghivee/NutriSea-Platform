@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    /* Menerapkan warna latar cerah dan ceria: soft sky blue / pastel theme */
+    @apply bg-sky-50 text-slate-800 font-sans antialiased overflow-hidden;
+  }
+}
+
+/* Sembunyikan scrollbar bawaan agar tampak elegan / aplikasi layar penuh */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE dan Edge */
+  scrollbar-width: none; /* Firefox */
+}
