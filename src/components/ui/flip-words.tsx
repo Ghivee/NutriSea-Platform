@@ -25,7 +25,7 @@ export const FlipWords = ({
   const longestWord = words.reduce((a, b) => (a.length > b.length ? a : b), "");
 
   return (
-    <span className="relative inline-block text-left perspective-1000">
+    <span className="relative inline-block text-left perspective-1000 overflow-visible px-2 py-1">
       <AnimatePresence>
         <motion.span
           key={index}
