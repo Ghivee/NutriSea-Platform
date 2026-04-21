@@ -41,7 +41,7 @@ export default function LandingSection() {
         </span>
 
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-800 tracking-tighter leading-[1.2] py-2">
-          Wujudkan Generasi Emas <br className="hidden md:block" /> yang{' '}
+          Wujudkan Generasi Emas <br className="hidden md:block" /> yang {' '}
           <FlipWords duration={2000} words={WORDS_ARRAY} className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500" />
         </h1>
 
