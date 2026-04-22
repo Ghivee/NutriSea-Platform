@@ -21,13 +21,9 @@ export const FlipWords = ({
     return () => clearInterval(interval);
   }, [words, duration]);
 
-  // Strategi Anti-Goyang (Zero-Shift): 
-  // Kita taruh semua kata sebagai 'invisible' di grid yang sama.
-  // Browser akan melebarkan container sesuai kata yang paling LEBAR (bukan paling panjang stringnya).
-  // Karena semua kata ada disitu terus (secara invisible), lebar container tidak akan pernah berubah 0.0001px pun.
+
   return (
     <span className="relative inline-grid grid-cols-1 grid-rows-1 text-left perspective-1000 overflow-visible px-2 py-8 -my-8 align-middle">
-      {/* Semua kata dirender invisible untuk mengunci lebar container secara absolut */}
       {words.map((word, i) => (
         <span 
           key={`anchor-${i}`}

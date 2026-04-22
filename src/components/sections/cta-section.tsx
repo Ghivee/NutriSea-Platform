@@ -2,8 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { LinkPreview } from '@/components/ui/link-preview';
+import { useNavigate } from 'react-router-dom';
 
 export default function CtaSection() {
+    const navigate = useNavigate();
     return (
         <div className="relative w-full h-full flex flex-col items-center justify-center bg-sky-50 px-4 overflow-hidden">
             
@@ -20,7 +22,7 @@ export default function CtaSection() {
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: false, amount: 0.4 }}
                 transition={{ duration: 0.8, type: "spring", stiffness: 100, damping: 20 }}
-                className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto mt-[-40px]"
+                className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto"
             >
                 {/* Logo Nutrisea bulat dibuang sesuai pesanan */}
 
@@ -36,12 +38,19 @@ export default function CtaSection() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                    <Button size="lg" className="rounded-full font-bold shadow-lg shadow-blue-500/30 bg-blue-600 hover:bg-blue-500 text-white border-none px-8">
-                        Mulai Transformasi →
-                    </Button>
-                    <Button size="lg" variant="outline" className="rounded-full border-blue-300 text-blue-600 hover:bg-blue-100 font-bold px-8 bg-transparent">
-                        Baca Publikasi Kelautan
-                    </Button>
+                    <a href="https://nutrisea-web-app.vercel.app" rel="noopener noreferrer">
+                        <Button 
+                            size="lg" 
+                            className="rounded-full font-bold shadow-lg shadow-blue-500/30 bg-blue-600 hover:bg-blue-500 text-white border-none px-8 w-full"
+                        >
+                            Mulai Transformasi →
+                        </Button>
+                    </a>
+                    <a href="https://kkp.go.id" target="_blank" rel="noopener noreferrer">
+                        <Button size="lg" variant="outline" className="rounded-full border-blue-300 text-blue-600 hover:bg-blue-100 font-bold px-8 bg-transparent w-full">
+                            Baca Publikasi Kelautan
+                        </Button>
+                    </a>
                 </div>
 
                 <div className="mt-16 text-xs md:text-sm text-slate-500 font-medium">

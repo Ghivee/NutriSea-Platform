@@ -17,13 +17,16 @@ interface ProductData {
     buttonText: string;
 }
 
+import produkImg from '@/assets/produk.png';
+import digitalImg from '@/assets/digital.png';
+
 const PRODUCT_DATA: Record<ProductId, ProductData> = {
     left: {
         id: 'left',
         label: 'KANDUNGAN SUPERFOOD LAUT',
         title: 'Formulasi Bio-Organik',
         description: 'Ekstrak Peptida Ikan Kembung, Rumput Laut organik, Kalsium Tiram, dan Daun Kelor. Bebas pengawet sintetis. Dipermanis alami oleh Xylitol untuk senyuman sehat tanpa karies anak.',
-        image: 'https://images.unsplash.com/photo-1615486171448-4eff3586049d?auto=format&fit=crop&w=600&q=80',
+        image: produkImg,
         colors: { gradient: 'from-sky-300 to-blue-400', glow: 'bg-blue-400', ring: 'border-l-blue-300' },
         stats: { connectionStatus: 'SERAPAN NUTRISI MAKSIMAL' },
         features: [{ label: 'Kepadatan Tulang', value: 88, icon: Database }, { label: 'Percepatan Kognitif', value: 94, icon: ArrowUpRight }],
@@ -34,7 +37,7 @@ const PRODUCT_DATA: Record<ProductId, ProductData> = {
         label: 'INTEGRASI DIGITAL IoT',
         title: 'Pelacakan Presisi',
         description: 'Sistem scan QR ceria memantau rutinitas gizi anak. Gummy lucu dan dashboard ramah ibu menjadi inovasi anti-GTM. Hasil scan mencegah catatan KIA Posyandu tercecer.',
-        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80&transparent=1',
+        image: digitalImg,
         colors: { gradient: 'from-blue-400 to-cyan-300', glow: 'bg-cyan-400', ring: 'border-r-cyan-300' },
         stats: { connectionStatus: 'TERHUBUNG KE POSYANDU' },
         features: [{ label: 'Tingkat Kepatuhan (Anti-GTM)', value: 98, icon: Activity }, { label: 'Akurasi Rekam Medis', value: 100, icon: Zap }],
@@ -82,7 +85,7 @@ export default function FeatureShowcase() {
                     
                     <div className="relative h-56 w-56 md:h-[400px] md:w-[400px] rounded-full border-4 border-white bg-white/50 backdrop-blur-xl flex items-center justify-center overflow-hidden shadow-2xl">
                         <AnimatePresence mode="wait">
-                            <motion.img key={currentData.id} src={currentData.image} variants={animations.image(isLeft)} initial="initial" animate="animate" exit="exit" className="w-full h-full object-cover mix-blend-multiply opacity-90" />
+                            <motion.img key={currentData.id} src={currentData.image} variants={animations.image(isLeft)} initial="initial" animate="animate" exit="exit" className="w-[85%] h-[85%] object-contain drop-shadow-xl transition-all duration-500 hover:scale-105" />
                         </AnimatePresence>
                     </div>
                     
@@ -101,7 +104,7 @@ export default function FeatureShowcase() {
                         <motion.div key={activeSide} variants={animations.container} initial="hidden" whileInView="visible" viewport={{ once: false }} exit="exit" className={`flex flex-col ${isLeft ? 'md:items-start md:text-left' : 'md:items-end md:text-right'} items-center text-center mt-10 md:mt-0`}>
                             <motion.h2 variants={animations.item} className="text-xs font-bold uppercase tracking-[0.2em] text-blue-500 mb-2">{currentData.label}</motion.h2>
                             <motion.h1 variants={animations.item} className="text-4xl md:text-5xl font-black tracking-tight mb-4 text-slate-800">{currentData.title}</motion.h1>
-                            <motion.p variants={animations.item} className="text-slate-600 mb-8 leading-relaxed max-md:text-sm font-medium">{currentData.description}</motion.p>
+                            <motion.p variants={animations.item} className="text-slate-600 mb-4 md:mb-5 leading-relaxed max-md:text-sm font-medium">{currentData.description}</motion.p>
 
                             <motion.div variants={animations.item} className="w-full space-y-5 bg-white p-6 rounded-3xl border border-slate-100 shadow-xl">
                                 {currentData.features.map((feature, idx) => (
